@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GlobeTrek Travels | Explore the World</title>
+<style>
+:root {
+--brand: #0d9488;
+--accent: #115e59;
+--bg: #f0fdfa;
+--text: #0f172a;
+--muted: #475569;
+}
+* { box-sizing: border-box; }
+body {
+margin: 0;
+font-family: "Poppins", sans-serif;
+background: var(--bg);
+color: var(--text);
+}
+header {
+background: linear-gradient(90deg, var(--brand), #14b8a6);
+color: white;
+padding: 40px 20px;
+text-align: center;
+}
+header h1 { margin: 0; font-size: 2.2rem; }
+header p { margin-top: 8px; font-size: 1.1rem; }
+nav {
+display: flex;
+justify-content: center;
+background: var(--accent);
+}
+nav a {
+color: white;
+text-decoration: none;
+padding: 14px 20px;
+display: block;
+font-weight: 500;
+}
+nav a:hover {
+background: #134e4a;
+}
+section {
+padding: 40px 20px;
+max-width: 1100px;
+margin: auto;
+}
+h2 {
+text-align: center;
+color: var(--accent);
+margin-bottom: 30px;
+}
+.packages {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+.card {
+background: white;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+overflow: hidden;
+transition: 0.3s;
+}
+.card:hover { transform: scale(1.03); }
+.card img { width: 100%; height: 180px; object-fit: cover; }
+.card-content { padding: 16px; }
+.card-content h3 { margin-top: 0; color: var(--accent); }
+.card-content p { color: var(--muted); font-size: 0.95rem; }
+.btn {
+background: var(--brand);
+color: white;
+padding: 10px 16px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-weight: 600;
+margin-top: 10px;
+transition: 0.2s;
+}
+.btn:hover { background: var(--accent); }
+/* Booking Form */
+form {
+background: white;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+max-width: 600px;
+margin: auto;
+}
+label {
+display: block;
+margin: 10px 0 6px;
+font-weight: 500;
+}
+input, select, textarea {
+width: 100%;
+padding: 10px;
+border-radius: 6px;
+border: 1px solid #ccc;
+font-family: inherit;
+}
+/* Gallery */
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 15px;
+}
+.gallery img {
+width: 100%;
+border-radius: 10px;
+height: 180px;
+object-fit: cover;
+transition: 0.3s;
+}
+.gallery img:hover { transform: scale(1.05); }
+/* Travel Tips */
+.tips {
+display: flex;
+flex-direction: column;
+gap: 16px;
+background: white;
+border-radius: 10px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+padding: 20px;
+max-width: 700px;
+margin: auto;
+}
+.tip {
+border-left: 4px solid var(--brand);
+padding-left: 12px;
+}
+footer {
+background: var(--accent);
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 40px;
+}
+@media(max-width:600px) {
+header h1 { font-size: 1.6rem; }
+.card img, .gallery img { height: 150px; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1>GlobeTrek Travels</h1>
+<p>Discover the beauty of the world — one destination at a time!</p>
+</header>
+<nav>
+<a href="#packages">Tour Packages</a>
+<a href="#booking">Book Now</a>
+<a href="#gallery">Gallery</a>
+<a href="#tips">Travel Tips</a>
+</nav>
+<!-- Tour Packages -->
+<section id="packages">
+<h2>Our Tour Packages</h2>
+<div class="packages">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach">
+<div class="card-content">
+<h3>Tropical Paradise</h3>
+<p>5 days in Maldives with beachfront villas and private snorkeling sessions.</p>
+<button class="btn">Book Now</button>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f" alt="Mountains">
+<div class="card-content">
+<h3>Mountain Escape</h3>
+<p>7-day Himalayan trekking adventure with cozy stays and campfire nights.</p>
+<button class="btn">Book Now</button>
+</div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="City Tour">
+<div class="card-content">
+<h3>European Explorer</h3>
+<p>10-day Europe trip through Paris, Rome, and Amsterdam with guided tours.</p>
+<button class="btn">Book Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Section -->
+<section id="booking">
+<h2>Book Your Adventure</h2>
+<form onsubmit="event.preventDefault(); alert('Your booking request has been submitted!');
+this.reset();">
+<label for="name">Full Name</label>
+<input type="text" id="name" required>
+<label for="email">Email</label>
+<input type="email" id="email" required>
+<label for="destination">Select Destination</label>
+<select id="destination" required>
+<option value="">-- Choose a Package --</option>
+<option>Tropical Paradise</option>
+<option>Mountain Escape</option>
+<option>European Explorer</option>
+</select>
+<label for="date">Travel Date</label>
+<input type="date" id="date" required>
+<label for="message">Additional Requests</label>
+<textarea id="message" rows="3" placeholder="Any special preferences..."></textarea>
+<button type="submit" class="btn" style="margin-top:15px;">Submit Booking</button>
+</form>
+</section>
+<!-- Gallery -->
+<section id="gallery">
+<h2>Destination Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Island">
+<img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba" alt="Temple">
+<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Safari">
+<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff" alt="Forest">
+<img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="Desert">
+<img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba" alt="Culture">
+</div>
+</section>
+<!-- Travel Tips -->
+<section id="tips">
+<h2>Travel Tips</h2>
+<div class="tips">
+<div class="tip">
+<h4>1. Pack Light, Travel Smart</h4>
+<p>Carry essentials only. A light bag means easier movement and less hassle.</p>
+</div>
+<div class="tip">
+<h4>2. Keep Copies of Documents</h4>
+<p>Always have digital and printed copies of your passport, ID, and bookings.</p>
+</div>
+<div class="tip">
+<h4>3. Respect Local Culture</h4>
+<p>Learn basic phrases and traditions. Respect makes your journey smoother.</p>
+</div>
+</div>
+</section>
+<footer>
+© 2025 GlobeTrek Travels | Designed by Saksham Kumar
+</footer>
+</body>
+</html>
